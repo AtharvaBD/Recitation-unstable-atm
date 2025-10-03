@@ -1,12 +1,57 @@
-1. Your test suite did not perform as expected.
-HINT: Review the function descriptions to ensure all of your test cases are accurate.
+Your test suite did not compile!
 
-2. Your test suite properly identified an incorrect solution!
+tests/tests.cc:41:27: error: 'stored_accounts_' is a private member of 'Atm'
+   41 |   REQUIRE(accounts == atm.stored_accounts_);
+      |                           ^
+includes/atm.hpp:32:60: note: declared private here
+   32 |   std::map<std::pair<unsigned int, unsigned int>, Account> stored_accounts_;
+      |                                                            ^
+tests/tests.cc:41:27: error: 'stored_accounts_' is a private member of 'Atm'
+   41 |   REQUIRE(accounts == atm.stored_accounts_);
+      |                           ^
+includes/atm.hpp:32:60: note: declared private here
+   32 |   std::map<std::pair<unsigned int, unsigned int>, Account> stored_accounts_;
+      |                                                            ^
+tests/tests.cc:41:27: error: 'stored_accounts_' is a private member of 'Atm'
+   41 |   REQUIRE(accounts == atm.stored_accounts_);
+      |                           ^
+includes/atm.hpp:32:60: note: declared private here
+   32 |   std::map<std::pair<unsigned int, unsigned int>, Account> stored_accounts_;
+      |                                                            ^
+In file included from tests/tests.cc:5:
+In file included from includes/atm.hpp:4:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/map:62:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_tree.h:63:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_algobase.h:64:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_pair.h:1011:51: error: invalid operands to binary expression ('const Account' and 'const Account')
+ 1011 |     { return __x.first == __y.first && __x.second == __y.second; }
+      |                                        ~~~~~~~~~~ ^  ~~~~~~~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_algobase.h:1193:22: note: in instantiation of function template specialization 'std::operator==<const std::pair<unsigned int, unsigned int>, Account, const std::pair<unsigned int, unsigned int>, Account>' requested here
+ 1193 |             if (!(*__first1 == *__first2))
+      |                             ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_algobase.h:1242:38: note: in instantiation of function template specialization 'std::__equal<false>::equal<std::_Rb_tree_const_iterator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>, std::_Rb_tree_const_iterator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>>' requested here
+ 1242 |       return std::__equal<__simple>::equal(__first1, __last1, __first2);
+      |                                      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_algobase.h:1250:19: note: in instantiation of function template specialization 'std::__equal_aux1<std::_Rb_tree_const_iterator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>, std::_Rb_tree_const_iterator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>>' requested here
+ 1250 |       return std::__equal_aux1(std::__niter_base(__first1),
+      |                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_algobase.h:1586:19: note: in instantiation of function template specialization 'std::__equal_aux<std::_Rb_tree_const_iterator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>, std::_Rb_tree_const_iterator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>>' requested here
+ 1586 |       return std::__equal_aux(__first1, __last1, __first2);
+      |                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_tree.h:1604:12: note: in instantiation of function template specialization 'std::equal<std::_Rb_tree_const_iterator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>, std::_Rb_tree_const_iterator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>>' requested here
+ 1604 |           && std::equal(__x.begin(), __x.end(), __y.begin());
+      |                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_map.h:1514:23: note: in instantiation of member function 'std::operator==' requested here
+ 1514 |     { return __x._M_t == __y._M_t; }
+      |                       ^
+tests/tests.cc:41:20: note: in instantiation of function template specialization 'std::operator==<std::pair<unsigned int, unsigned int>, Account, std::less<std::pair<unsigned int, unsigned int>>, std::allocator<std::pair<const std::pair<unsigned int, unsigned int>, Account>>>' requested here
+   41 |   REQUIRE(accounts == atm.stored_accounts_);
+      |                    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_pair.h:1010:5: note: candidate template ignored: could not match 'const pair<_T1, _T2>' against 'const Account'
+ 1010 |     operator==(const pair<_T1, _T2>& __x, const pair<_U1, _U2>& __y)
+      |     ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_pair.h:1010:5: note: candidate template ignored: could not match 'const pair<_T1, _T2>' against 'const Account'
+4 errors generated.
 
-3. Your test suite properly identified an incorrect solution!
 
-4. Your test suite properly identified an incorrect solution!
-
-5. Your test suite properly identified an incorrect solution!
-
-score: 4/5
+score: 0/5
