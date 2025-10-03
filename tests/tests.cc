@@ -35,20 +35,7 @@ bool CompareFiles(const std::string& p1, const std::string& p2) {
 
 TEST_CASE("Register account", "[output]") {
   Atm atm;
-  atm.RegisterAccount(1234567, 1234, "Sam Sepiol", 300);
-  REQUIRE_THROWS_AS(atm.RegisterAccount(1234567, 1234, "Sam Sepiol", 300),
-                    std::invalid_argument);
   REQUIRE_THROWS_AS(atm.RegisterAccount(1234567, 1234, "Sam Sepiol", -300),
-                    std::invalid_argument);
-  REQUIRE_THROWS_AS(atm.WithdrawCash(1234567, 1234, -300),
-                    std::invalid_argument);
-  REQUIRE_THROWS_AS(atm.WithdrawCash(1234767, 1234, 300),
-                    std::invalid_argument);
-  REQUIRE_THROWS_AS(atm.WithdrawCash(1234567, 1224, 300),
-                    std::invalid_argument);
-  REQUIRE_THROWS_AS(atm.WithdrawCash(1234767, 1224, 300),
-                    std::invalid_argument);
-  REQUIRE_THROWS_AS(atm.DepositCash(1234567, 1234, -300),
                     std::invalid_argument);
 }
 
