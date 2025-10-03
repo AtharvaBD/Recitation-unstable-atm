@@ -33,6 +33,12 @@ bool CompareFiles(const std::string& p1, const std::string& p2) {
 // Test Cases
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+TEST_CASE("Register account", "[output]") {
+  Atm atm;
+  REQUIRE_THROWS_AS(atm.RegisterAccount(1234567, 1234, "Sam Sepiol", -300),
+                    std::invalid_argument);
+}
+
 TEST_CASE("Example: Create a new account", "[ex-1]") {
   Atm atm;
   atm.RegisterAccount(12345678, 1234, "Sam Sepiol", 300.30);
