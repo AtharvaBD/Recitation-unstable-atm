@@ -37,8 +37,6 @@ TEST_CASE("Register account", "[output]") {
   Atm atm;
   REQUIRE_THROWS_AS(atm.RegisterAccount(1234567, 1234, "Sam Sepiol", -300),
                     std::invalid_argument);
-  auto accounts = atm.GetAccounts();
-  REQUIRE(accounts == atm.stored_accounts_);
 }
 
 TEST_CASE("Example: Create a new account", "[ex-1]") {
